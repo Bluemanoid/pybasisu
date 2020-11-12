@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pybasisu"
-version = "1.12.0+721dacc"
+version = "1.12.1+f80f8dd"
 description = ""
 license="MIT"
 authors = ["Yoann Potinet <yoann.potinet@bluemanoid.com>"]
