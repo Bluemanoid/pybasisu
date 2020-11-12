@@ -6,7 +6,7 @@ trigger:
   - hotfix/*
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: ubuntu-20.04
 strategy:
   matrix:
     Python36:
@@ -40,5 +40,5 @@ steps:
   - task: PublishBuildArtifacts@1
     inputs:
       pathToPublish: dist
-      artifactName: Build Output
+      artifactName: Pipeline Build Output
     displayName: 'Publish package'
