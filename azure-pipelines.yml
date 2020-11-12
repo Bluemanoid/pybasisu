@@ -1,0 +1,44 @@
+trigger:
+  - main
+  - develop
+  - feature/*
+  - release/*
+  - hotfix/*
+
+pool:
+  vmImage: ubuntu-20.04
+strategy:
+  matrix:
+    Python36:
+      python.version: '3.6'
+    Python37:
+      python.version: '3.7'
+    Python38:
+      python.version: '3.8'
+    Python39:
+      python.version: '3.9'
+
+steps:
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: '$(python.version)'
+    displayName: 'Use Python $(python.version)'
+
+  - script: |
+      python -m pip install --upgrade pip
+      python -m pip install poetry
+    displayName: 'Install poetry'
+
+  - script: |
+      poetry install
+    displayName: 'Install dependencies'
+
+  - script: |
+      poetry build
+    displayName: 'Build package'
+
+  - task: PublishBuildArtifacts@1
+    inputs:
+      pathToPublish: dist
+      artifactName: Pipeline Build Output
+    displayName: 'Publish package'
