@@ -1,0 +1,41 @@
+[tool.poetry]
+name = "pybasisu"
+version = "1.12.0+721dacc"
+description = ""
+license="MIT"
+authors = ["Yoann Potinet <yoann.potinet@bluemanoid.com>"]
+readme = "README.md"
+homepage = "https://github.com/Bluemanoid/pybasisu"
+repository = "https://github.com/Bluemanoid/pybasisu"
+keywords = ["basisu", "basis"]
+
+# For a list of valid classifiers, see https://pypi.org/classifiers/
+classifiers = [
+    #   3 - Alpha
+    #   4 - Beta
+    #   5 - Production/Stable
+    "Development Status :: 3 - Alpha",
+
+    "Intended Audience :: Developers",
+    "Topic :: Multimedia :: Graphics",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Multimedia :: Graphics :: Graphics Conversion",
+
+    "License :: OSI Approved :: MIT License",
+]
+
+[tool.poetry.scripts]
+pybasisu = 'pybasisu.cli:run'
+
+[tool.poetry.dependencies]
+python = "^3.5"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[tool.poetry.urls]
+"Bug Tracker" = "https://github.com/Bluemanoid/pybasisu/issues"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
